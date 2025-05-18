@@ -1,0 +1,763 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  list-style: none;
+}
+
+body {
+  font-family: 'Merriweather', sans-serif;
+  font-size: 16px; /* Устанавливаем базовый размер шрифта */
+  line-height: 1.5;
+  overflow-x: hidden;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+header {
+  background-color: #131c36;
+  height: 15vh;
+  display: flex;
+  justify-content: center; /* Выравниваем элементы по центру */
+  align-items: center; /* Вертикальное выравнивание */
+
+}
+
+.container {
+  width: 100%;
+  max-width: 1440px;
+  margin: 0 auto;
+  padding-left: clamp(16px, 5vw, 80px);
+  padding-right: clamp(16px, 5vw, 80px);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* Логотип */
+.logo {
+  width: 20vw; /* 20% от ширины экрана */
+  height: auto;
+  max-width: 324px; /* Максимальная ширина, чтобы логотип не стал слишком большим */
+}
+
+/* Контактная информация */
+.header-right {
+  display: flex;
+  flex-direction: column;
+  text-align: right;
+}
+
+.contact-link {
+  font-size: 1.2rem;
+  color: white;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  margin-bottom: 2vh;
+  line-height: 1.6;
+}
+
+.address {
+  font-size: 1rem;
+  color: #fff;
+  margin-top: 1vh;
+  display: flex;
+  align-items: center;
+  line-height: 1.6;
+}
+
+.contact-icon {
+  width: 1.5vw;
+  height: auto;
+  margin-right: 1vw;
+}
+.close-btn{
+  display: none;
+}
+/* Навигация */
+.navigation {
+  flex-grow: 2; /* Навигация займёт оставшееся пространство */
+  display: flex;
+  justify-content: center; /* Выравниваем пункты меню по центру */
+}
+
+.navigation ul {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  gap: 2vw;
+}
+
+.navigation a {
+  font-size: 1.5rem;
+  color: #fff;
+  text-decoration: none;
+}
+
+.navigation a:hover {
+  color: #4b61ad;
+}
+
+/* Мобильная версия */
+.burger {
+  font-size: 2rem;
+  color: white;
+  display: none;
+  cursor: pointer;
+}
+
+.mobile-call-icon {
+  display: none;
+}
+
+.main {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: url(https://static.wixstatic.com/media/18c245_dddd02424171465dba05efa04427cabf~mv2.jpeg);
+  background-size: cover;
+  background-position: center;
+  height: 85vh;
+  padding: 10vh 5vw;
+  overflow: hidden;
+  text-align: center;
+}
+
+.main::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 0;
+}
+
+.main-container {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.main-header h1 span {
+  font-size: 5vw;
+  font-weight: bold;
+  color: #fff;
+  display: inline-block;
+  margin-bottom: 6vh;
+  text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.7);
+}
+
+.main-cards {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+}
+
+.main-card {
+  background-color: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 15px;
+  padding: 1rem 1.5rem;
+  color: white;
+  backdrop-filter: blur(6px);
+  text-align: left;
+  transition: transform 0.2s, background-color 0.3s;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.main-card:hover {
+  transform: scale(1.03);
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+.main-card a {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  color: white;
+  text-decoration: none;
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+.card-icon {
+  width: 36px;
+  height: 36px;
+  filter: invert(100%);
+  opacity: 0.9;
+  transition: transform 0.3s ease;
+}
+
+
+/* Секция About Us */
+.about-us {
+  background-color: #343a40;
+  padding: 8vh 5vw;
+}
+
+/* Контейнер контента */
+.about-us-content {
+  max-width: 1200px;
+  width: 100%;
+  margin: 0 auto;
+  text-align: center;
+  padding: 0 1rem;
+}
+
+/* Заголовок */
+.about-us-title {
+  font-size: clamp(2rem, 5vw, 3rem);
+  color: #ffffff;
+  margin-bottom: 1.5rem;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+}
+
+/* Описание */
+.about-us-description {
+  font-size: 1.125rem;
+  line-height: 1.75;
+  color: #e0e0e0;
+  margin-bottom: 2rem;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Жирный текст в Mission Statement */
+.about-us-description strong {
+  font-weight: 700;
+  color: #ffffff;
+}
+
+/* Горизонтальная линия */
+.about-us-hr {
+  border: 0;
+  border-top: 2px solid #6c8cd5;
+  margin: 2.5rem auto;
+  width: 60%;
+  transition: width 0.3s ease-in-out;
+}
+
+/* Ссылка-кнопка */
+.about-us-link {
+  font-size: 1.125rem;
+  color: #ffffff;
+  background-color: #6c8cd5;
+  padding: 0.75rem 1.5rem;
+  border-radius: 8px;
+  text-decoration: none;
+  display: inline-block;
+  margin-top: 2vh;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.about-us-link:hover {
+  background-color: #4b61ad;
+  transform: translateY(-2px);
+}
+
+
+
+.our-service {
+  padding: 40px 20px;
+  background-color: #f4f4f4;
+}
+
+.our-service-content {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.our-service-title {
+  text-align: center;
+  font-size: 2.5rem;
+  margin-bottom: 40px;
+  font-family: 'Merriweather', serif;
+  color: #343a40;
+}
+
+/* Сетка карточек */
+.services {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: 24px;
+}
+
+/* Карточка сервиса */
+.service {
+  background-color: white;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  border-radius: 10px;
+  padding: 20px;
+  text-align: center;
+  transition: transform 0.2s ease;
+}
+
+.service:hover {
+  transform: translateY(-5px);
+}
+
+.service img {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  object-fit: cover;
+}
+
+/* Название сервиса */
+.service-title {
+  font-size: 1.4rem;
+  margin: 15px 0 10px;
+  font-weight: 600;
+  color: #222;
+}
+
+/* Информация */
+.card-info {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 15px 0;
+  color: #555;
+}
+
+.card-info li {
+  font-size: 0.95rem;
+  margin: 4px 0;
+}
+
+/* Кнопка */
+.book-now {
+  background-color: #17a2b8;
+  color: white;
+  border: none;
+  padding: 10px 18px;
+  font-size: 1rem;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.book-now:hover {
+  background-color: #128293;
+  transform: translateY(-2px);
+}
+
+
+
+.footer {
+  background-color: #131c36;
+  color: #fff;
+  padding: 4vh 2vw;
+}
+
+.footer-container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  align-items: flex-start;
+}
+
+.footer-div {
+  width: 30%;
+  margin: 1vh 0;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+
+.footer-h3 {
+  font-size: 1.8rem;
+  margin-bottom: 1vh;
+  color: #fff;
+  position: relative;
+  padding-right: 30px; /* Увеличиваем отступ справа для стрелочки */
+}
+
+
+
+.footer-ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  text-align: left;
+  display: block; /* На десктопе списки по умолчанию видимы */
+}
+
+.footer-ul li {
+  margin-bottom: 0.5vh;
+  text-align: left;
+  display: flex;
+  justify-content: flex-start;
+}
+
+.footer-ul a {
+  color: #fff;
+  text-decoration: none;
+}
+
+.footer-ul a:hover {
+  color: #4b61ad;
+}
+
+/* Убираем стрелку и курсор на секции Subscribe */
+.footer-subscribe .footer-h3 {
+  cursor: default; /* Убираем курсор по типу pointer */
+}
+
+.footer-subscribe .footer-h3::after {
+  content: none; /* Убираем стрелочку */
+}
+
+/* Секция формы выравнена вправо */
+.footer-subscribe {
+  margin-left: auto;
+  align-items: flex-end;
+  text-align: right;
+}
+
+.footer-subscribe .footer-ul {
+  display: flex;
+  flex-direction: row;
+  gap: 10px; /* Расстояние между изображениями */
+  margin-top: 1vh;
+}
+
+.footer-subscribe .footer-ul li {
+  margin-bottom: 0;
+}
+
+/* Стиль формы */
+.footer form {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-top: 1vh;
+  margin-bottom: 1vh;
+}
+
+.footer form input[type='email'] {
+  padding: 10px;
+  font-size: 1rem;
+  margin-right: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  width: 200px;
+}
+
+.footer form button {
+  padding: 10px;
+  background-color: #4b61ad;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1rem;
+}
+
+.footer form button:hover {
+  background-color: #3a4b7a;
+}
+
+@media (max-width: 768px) {
+  header {
+    height: calc(20vw);
+  }
+
+  .logo {
+    width: 60vw;  /* Увеличиваем логотип на мобильных */
+    max-width: 324px;
+  }
+
+  .container {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .burger {
+    display: block;
+    order: 1;
+  }
+
+  /* Кнопка закрытия меню */
+  .close-btn {
+    font-size: 2rem;
+    color: white;
+    display: block;
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    cursor: pointer;
+    z-index: 1000;
+  }
+
+  .header-left {
+    order: 2;
+  }
+
+  .mobile-call-icon {
+    display: block;
+    order: 3;
+  }
+
+  .mobile-call-icon img {
+    width: 24px;
+    height: 24px;
+  }
+  .header-right {
+    display: none; /* скрываем всё */
+  }
+  .address {
+    display: none;
+  }
+  /* Навигация (мобильная) */
+  .navigation {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(6px); /* Эффект стекла (более сильный блюр) */
+    -webkit-backdrop-filter: blur(15px); /* Для Safari */
+    display: none;
+    flex-direction: column;
+    justify-content: flex-start; /* Выравнивание по верху */
+    align-items: center;
+    z-index: 999;
+    transition: opacity 0.3s ease;
+    opacity: 0;
+    pointer-events: none;
+  }
+  .navigation.active {
+    display: flex;
+    opacity: 1;
+    pointer-events: auto;
+  }
+
+  .navigation ul {
+    flex-direction: column;
+    gap: 3vh;
+    margin-top: 5vh;
+  }
+
+  .navigation a {
+    font-size: 2rem; /* Увеличиваем размер текста для мобильной версии */
+    color: white;
+    text-decoration: none;
+  }
+  
+  .navigation a:hover {
+    color: #4b61ad;
+  }
+
+  .main {
+    height: 65vh;
+    padding: 5vh 3vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+  }
+
+  .main-header h1 span {
+    font-size: 8vw; /* Увеличили шрифт */
+    margin-bottom: 3vh;
+    color: #fff;
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.7);
+  }
+
+  .main-cards {
+    display: flex;
+    justify-content: space-between; /* Располагаем карточки в одну строку */
+    gap: 1rem;
+    padding: 0 1rem;
+    z-index: 1;
+  }
+
+  .main-card {
+    background-color: rgba(255, 255, 255, 0.1); /* Полупрозрачный фон */
+    border-radius: 15px;
+    backdrop-filter: blur(6px); /* Размытие фона */
+    padding: 0.8rem; /* Уменьшаем отступы внутри карточки */
+    width: 32%; /* Карточки занимают 1/3 ширины контейнера */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    transition: transform 0.3s ease;
+  }
+
+  .main-card:hover {
+    transform: scale(1.05);
+    background-color: rgba(255, 255, 255, 0.2);
+  }
+
+  .card-icon {
+    width: 36px;
+    height: 36px;
+    margin-bottom: 0.5rem;
+    filter: invert(100%);
+    opacity: 0.9;
+    transition: transform 0.3s ease;
+    margin-left: auto; /* Центрируем иконку */
+    margin-right: auto; /* Центрируем иконку */
+  }
+
+  .main-card a {
+    font-size: 0.85rem;
+    font-weight: 500;
+    color: white;
+    text-decoration: none;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem; 
+  }
+
+  .about-us {
+    padding: 4vh 4vw;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .about-us-content {
+    width: 100%;
+    text-align: center;
+  }
+
+  .about-us-title {
+    font-size: 2rem;
+  }
+
+  .about-us-description {
+    font-size: 1rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .about-us-hr {
+    width: 80%;
+  }
+
+  .about-us-link {
+    font-size: 1rem;
+    padding: 0.5rem 1rem;
+    margin-top: 1.5rem;
+    background-color: #6c8cd5;
+    color: #ffffff;
+    border-radius: 6px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15);
+    transition: background-color 0.3s ease, transform 0.2s ease;
+  }
+
+  .about-us-link:hover {
+    background-color: #4b61ad;
+    transform: translateY(-2px);
+  }
+
+  .our-service {
+    padding: 30px 15px;
+  }
+
+  .our-service-title {
+    font-size: 2rem;
+    margin-bottom: 30px;
+  }
+
+  .service {
+    padding: 15px;
+  }
+
+  .service-title {
+    font-size: 1.2rem;
+  }
+
+  .book-now {
+    width: 100%;
+    padding: 12px;
+    font-size: 1rem;
+    margin-top: 10px;
+  }
+
+  .card-info li {
+    font-size: 0.9rem;
+  }
+  .footer-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .footer-div {
+    width: 80%;
+    text-align: center;
+    margin-bottom: 2vh;
+    align-items: center;
+  }
+
+  .footer-h3 {
+    font-size: 1.6rem;
+  }
+  
+  .footer-ul {
+    display: none; /* На мобильных устройствах скрываем списки по умолчанию */
+  }
+
+  .footer-h3::after {
+    content: "▼"; /* Стрелочка вниз */
+    font-size: 1rem;
+    position: absolute;
+    right: 10px; /* Стрелочка будет располагаться справа */
+    top: 50%; /* Центрируем стрелочку по вертикали */
+    transform: translateY(-50%); /* Корректируем вертикальное положение */
+  }
+
+
+
+  .footer-ul li {
+    font-size: 1rem;
+  }
+
+  .footer-subscribe {
+    align-items: center;
+    text-align: center;
+    margin-left: 0;
+  }
+
+  .footer form {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .footer form input[type='email'],
+  .footer form button {
+    width: 100%;
+    margin: 0 0 1vh 0;
+  }
+}
+
+
+
+
+
+
+
+
