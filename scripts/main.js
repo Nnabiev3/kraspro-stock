@@ -40,3 +40,21 @@ window.addEventListener('resize', () => {
     document.querySelectorAll('.footer-div:not(.footer-subscribe) .footer-ul').forEach(ul => ul.style.display = 'none');
   }
 });
+
+
+const slides = document.querySelectorAll(".bg-slide");
+let current = 0;
+
+function showSlide(index) {
+  slides.forEach((slide, i) => {
+    slide.classList.toggle("active", i === index);
+  });
+}
+
+function nextSlide() {
+  current = (current + 1) % slides.length;
+  showSlide(current);
+}
+
+showSlide(current);
+setInterval(nextSlide, 5000); // смена каждые 5 секунд
